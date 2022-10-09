@@ -8,7 +8,7 @@ ctx.fillStyle = 'red';
 //changes how thick the border is
 ctx.lineWidth = 2;
 ctx.beginPath();
-/**
+/** CIRCLE
 *1st value moves it along the X axis
 *2nd value moves it along the Y axis
 *3rd value makes it bigger
@@ -22,8 +22,9 @@ ctx.fill();
 //creates a border around it
 ctx.stroke();
 
-/**
- * 
+/** RECTANGLE
+ * 1st two values move it on the X, and Y axis respectively
+ * The last two are width, and height respectively
  */
 
-ctx.fillRect(0, 0, 100, 100);
+ctx.fillRect(100, 50, 100, 100);
