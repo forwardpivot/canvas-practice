@@ -3,9 +3,10 @@ const ctx = canvas1.getContext('2d');
 canvas1.width = window.innerWidth;
 canvas1.height = window.innerHeight;
 
-let xAxis = 0;
-let yAxis = 0;
-let size = 0;
+let xAxis = 500;
+let yAxis = 500;
+//let size = 0;
+let angle = 0;
 
 function draw() {
  //changes the fill color to the value
@@ -22,7 +23,7 @@ function draw() {
  *4th value starts the angle
  *5th value finishes the angle
  */ 
- ctx.arc(xAxis, yAxis, size, 0, Math.PI * 2);
+ ctx.arc(xAxis, yAxis, 10, 0, Math.PI * 2);
  ctx.closePath()
  // The default color is black
  ctx.fill();
@@ -36,10 +37,19 @@ function draw() {
 function animate() {
     //This clears the previous frames, and only shows the current frame, but then
     //no meteor :(
-    //ctx.clearRect(0,0,canvas1.width,canvas1.height)
-    xAxis += 1;
-    yAxis += 1;
-    size += 0.2;
+    ctx.clearRect(0,0,canvas1.width,canvas1.height)
+    /**
+     * Math.sin will cause a wobble effect
+     * Math.cos will cause it to do a circle
+     */
+    xAxis += 5 * Math.sin(angle);
+    yAxis += 5 * Math.cos(angle);
+    //size += 0.2;
+    /**
+     * Decreasing the angle variable causes it to have a wider range of movement
+     */
+    angle += 0.1;
+
 
    draw();
     //Recursion
