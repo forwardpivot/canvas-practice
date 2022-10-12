@@ -4,35 +4,41 @@ canvas1.width = window.innerWidth;
 canvas1.height = window.innerHeight;
 
 
+
 /**
  * This function redraws the canvas over, and over creating
  * the illusion of movement
  */
 function animate() {
-//changes the fill color to the value
-ctx.fillStyle = 'red';
-//Changes the color of the border
-ctx.strokeStyle='blue';
-//changes how thick the border is
-ctx.lineWidth = 3;
-ctx.beginPath();
-/** CIRCLE
-*1st value moves it along the X axis
-*2nd value moves it along the Y axis
-*3rd value makes it bigger
-*4th value starts the angle
-*5th value finishes the angle
-*/ 
-ctx.arc(200, 200, 50, 0, Math.PI * 2);
-ctx.closePath()
-// The default color is black
-ctx.fill();
-//creates a border around it
-ctx.stroke();
+    let xAxis = 0;
+    let yAxis = 0;
 
-//Recursion
-requestAnimationFrame(animate);
-}
+    //changes the fill color to the value
+    ctx.fillStyle = 'red';
+    //Changes the color of the border
+    ctx.strokeStyle='blue';
+    //changes how thick the border is
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+    /** CIRCLE
+    *1st value moves it along the X axis
+    *2nd value moves it along the Y axis
+    *3rd value makes it bigger
+    *4th value starts the angle
+    *5th value finishes the angle
+    */ 
+    ctx.arc(xAxis, yAxis, 50, 0, Math.PI * 2);
+    ctx.closePath()
+    // The default color is black
+    ctx.fill();
+    //creates a border around it
+    ctx.stroke();
+    xAxis += 10;
+    yAxis += 10;
+
+    //Recursion
+    requestAnimationFrame(animate);
+    }
 animate();
 
 
