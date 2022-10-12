@@ -3,15 +3,16 @@ const ctx = canvas1.getContext('2d');
 canvas1.width = window.innerWidth;
 canvas1.height = window.innerHeight;
 
-
+let xAxis = 0;
+let yAxis = 0;
+let size = 1;
 
 /**
  * This function redraws the canvas over, and over creating
  * the illusion of movement
  */
 function animate() {
-    let xAxis = 0;
-    let yAxis = 0;
+
 
     //changes the fill color to the value
     ctx.fillStyle = 'red';
@@ -27,7 +28,7 @@ function animate() {
     *4th value starts the angle
     *5th value finishes the angle
     */ 
-    ctx.arc(xAxis, yAxis, 50, 0, Math.PI * 2);
+    ctx.arc(xAxis, yAxis, size, 0, Math.PI * 2);
     ctx.closePath()
     // The default color is black
     ctx.fill();
@@ -35,6 +36,7 @@ function animate() {
     ctx.stroke();
     xAxis += 10;
     yAxis += 10;
+    size += 2;
 
     //Recursion
     requestAnimationFrame(animate);
