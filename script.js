@@ -19,7 +19,7 @@ function animate() {
     //changes the fill color to the value
     ctx.fillStyle = 'red';
     //Changes the color of the border
-    ctx.strokeStyle='blue';
+    ctx.strokeStyle='orange';
     //changes how thick the border is
     ctx.lineWidth = 3;
     ctx.beginPath();
